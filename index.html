@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" onclick="openPersonalInfo('Card 1', 'johndoe@example.com', '(123) 456-7890')">
+            <div class="card-content" style="background-image: url('image/070f4522c211340ccd50d319473bc801.jpg');">
+                <h2 class="card-title">Card 1</h2>
+                <p class="card-description">Click to view personal info.</p>
+            </div>
+        </div>
+        <!-- Add similar card elements for Cards 2 to 6 with different images -->
+    </div>
+
+    <script>
+        function openPersonalInfo(name, email, phone) {
+            // Define the personal information content
+            var personalInfoContent = `
+                <h1>Personal Information</h1>
+                <p>Name: ${name}</p>
+                <p>Email: ${email}</p>
+                <p>Phone: ${phone}</p>
+                <!-- Add more personal information here if needed -->
+            `;
+
+            // Open a new tab and populate it with the personal information content
+            var newTab = window.open("", "_blank");
+            newTab.document.write(personalInfoContent);
+        }
+    </script>
+</body>
+</html>
